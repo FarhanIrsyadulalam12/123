@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Magnetic Stirrer IoT Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Magnetic Stirrer IoT Monitoring System</h1>
+        <div class="status">
+            ● Online
+        </div>
+    </header>
+
+    <div class="card-container">
+
+        <div class="card rpm">
+            <h2>Kecepatan</h2>
+            <h1 id="rpmValue">1200</h1>
+            <p>RPM</p>
+        </div>
+
+        <div class="card temp">
+            <h2>Suhu</h2>
+            <h1 id="tempValue">45.6</h1>
+            <p>°C</p>
+        </div>
+
+        <div class="card visc">
+            <h2>Viskositas</h2>
+            <h1 id="viscValue">1250</h1>
+            <p>cP</p>
+        </div>
+
+    </div>
+
+    <div class="graph-card">
+        <h2>Grafik Real-Time</h2>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="control-container">
+
+        <div class="control-card">
+
+            <h2>Pengaturan RPM</h2>
+
+            <input
+            type="range"
+            id="rpmSlider"
+            min="0"
+            max="3000"
+            value="1500">
+
+            <h3 id="rpmSet">1500 RPM</h3>
+
+            <button class="btn-blue">
+                SET RPM
+            </button>
+
+        </div>
+
+        <div class="control-card">
+
+            <h2>Pengaturan Suhu</h2>
+
+            <input
+            type="range"
+            id="tempSlider"
+            min="25"
+            max="100"
+            value="60">
+
+            <h3 id="tempSet">60 °C</h3>
+
+            <button class="btn-red">
+                SET SUHU
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="button-group">
+
+        <button class="start">
+            START
+        </button>
+
+        <button class="stop">
+            STOP
+        </button>
+
+        <button class="reset">
+            RESET
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
